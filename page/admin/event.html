@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../../asset/css/output.css" rel="stylesheet">
+    <link href="../../asset/css/custom.css" rel="stylesheet">
+</head>
+<body class=" bg-gradient-to-b from-white via-slate-50 to-slate-50">
+    <main class="h-screen flex overflow-hidden main w-full">
+        <aside class="bg-slate-200 px-4 pt-14 shadow-sm max-w-xs min-h-full">
+          <!-- logo -->
+          <div class="w-full flex justify-center">
+            <img src="../../asset/img/logo-gdsc.png" style="width: 70%;" alt="logo gdsc">
+          </div>
+          <!-- logo -->
+  
+          <!-- submenu -->
+          <div class="flex flex-col gap-5 mt-24 w-100 items-center" id="list-sidebar">
+            <a href="dashboard.html" data-target="#home" class="text-2xl pb-2 btn-sidebar-home cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Dashboard</a>
+            <a href="member.html" data-target="#about" class="text-2xl btn-sidebar-member pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Member</a>
+            <a href="event.html" data-target="#events" class="text-2xl btn-sidebar-event pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Events</a>
+            <a href="../index.html" data-target="#teams" class="text-2xl btn-sidebar pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Log out</a>
+          </div>
+          <!-- submenu -->
+        </aside>
+
+
+        <section class="px-6 py-4 w-full overflow-y-auto overflow-x-hidden">
+            <h2 class="text-2xl font-semibold mt-11 mb-4 text-slate-700 text-center">Manage You'r Event</h2>
+            <div class="flex flex-col">
+                <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                  <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div class="overflow-hidden">
+                      <table class="min-w-full">
+                        <thead class="bg-blue-400 border-b">
+                          <tr>
+                            <th scope="col" class="w-[10%] text-sm font-medium text-gray-50 text-center px-6 py-4">
+                              No
+                            </th>
+                            <th scope="col" class="w-[20%] text-sm font-medium text-gray-50 text-center px-6 py-4">
+                              Name
+                            </th>
+                            <th scope="col" class="w-[20%] text-sm font-medium text-gray-50 text-center px-6 py-4">
+                              Field of study
+                            </th>
+                            <th class="text-sm w-[20%] font-medium text-gray-50 text-center px-6 py-4">
+                              Action
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="bg-transparant border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-nowrap text-center font-medium text-gray-900">1</td>
+                            <td class=" text-gray-900 text-center px-6 py-4 whitespace-nowrap">
+                              Hands-on Workshop
+                            </td>
+                            <td class=" text-gray-900 text-center px-6 py-4 whitespace-nowrap">
+                              #Web Basic
+                            </td>
+                            <td class=" text-gray-900 text-center px-6 py-4 whitespace-nowrap flex gap-2">
+                                <button class="px-6 py-1.5 rounded font-semibold text-white block bg-blue-400 hover:opacity-70 transition-opacity duration-300">View</button>
+                                <button class="px-6 py-1.5 rounded font-semibold text-white block bg-orange-400 hover:opacity-70 transition-opacity duration-300">Update</button>
+                                <button onclick="destroy(this)" class="px-6 py-1.5 rounded font-semibold text-white block bg-red-400 hover:opacity-70 transition-opacity duration-300">Delete</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+
+        
+    </main>
+</body>
+<script src="../../asset/js/jquery.js"></script>
+<script>
+    let queryString = window.location;
+    if (queryString.pathname == "/page/admin/dashboard.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-home").addClass("border-b-blue-600 border-b-4")
+    }else if (queryString.pathname == "/page/admin/member.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-member").addClass("border-b-blue-600 border-b-4")
+    }else if (queryString.pathname == "/page/admin/event.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-event").addClass("border-b-blue-600 border-b-4")
+    }
+
+    function destroy(el){
+      $(el).parent().parent()[0].remove()
+    }
+    // console.log(queryString);
+    // const urlParams = new URLSearchParams(queryString);
+
+    // const product = urlParams.get('product')
+</script>
+</html>

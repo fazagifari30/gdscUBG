@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="../../asset/css/output.css" rel="stylesheet">
+    <link href="../../asset/css/custom.css" rel="stylesheet">
+</head>
+<body class=" bg-gradient-to-b from-white via-slate-50 to-slate-50">
+    <main class="h-screen flex overflow-hidden main w-full">
+        <aside class="bg-slate-200 px-4 pt-14 shadow-sm max-w-xs min-h-full">
+          <!-- logo -->
+          <div class="w-full flex justify-center">
+            <img src="../../asset/img/logo-gdsc.png" style="width: 70%;" alt="logo gdsc">
+          </div>
+          <!-- logo -->
+  
+          <!-- submenu -->
+          <div class="flex flex-col gap-5 mt-24 w-100 items-center" id="list-sidebar">
+            <a href="dashboard.html" data-target="#home" class="text-2xl pb-2 btn-sidebar-home cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Dashboard</a>
+            <a href="member.html" data-target="#about" class="text-2xl btn-sidebar-member pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Member</a>
+            <a href="event.html" data-target="#events" class="text-2xl btn-sidebar-event pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Events</a>
+            <a href="../index.html" data-target="#teams" class="text-2xl btn-sidebar pb-2 cursor-pointer hover:opacity-60 transition-all duration-200 hover:border-b-4 mt-5 hover:border-b-blue-600">Log out</a>
+          </div>
+          <!-- submenu -->
+        </aside>
+
+
+        <section class="px-6 py-4 w-full">
+            <!-- search -->
+            <div class="w-1/2 relative overflow-hidden">
+                <div class="flex">
+                    <div class="mb-3 xl:w-96">
+                      <div class="input-group relative flex gap-3 items-stretch w-full mb-4">
+                        <input type="search" class="form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Search" aria-label="Search" aria-describedby="button-addon2">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- search -->
+
+            <!-- banner -->
+            <div class="w-full bg-blue-100 flex rounded-md relative px-6 py-5">
+                <div class="w-3/5">
+                    <h3 class="text-slate-700 font-semibold text-2xl mb-4">Selamat datang admin</h3>
+                    <span class="italic font-semibold">Produktivitas adalah mampu melakukan hal-hal yang sebelumnya tidak dapat kamu lakukan</span>
+                    <span>- Franz Kafka.</span>
+
+                    <button class="px-6 py-1.5 rounded font-semibold text-white block bg-blue-400 mt-11 hover:opacity-70 transition-opacity duration-300">Add Event</button>
+                </div>
+                
+                <img src="../../asset/img/flat/banner-character1.png" alt="">
+            </div>
+            <!-- banner -->
+
+            
+            <h2 class="text-xl font-semibold mt-11 mb-4 text-slate-700">Manage Events & Member</h2>
+            <!-- cards -->
+            <div class="flex justify-between gap-3">
+                <div class="w-[30%] cursor-pointer hover:transform-gpu hover:scale-105 transition-all duration-300 px-8 py-9 bg-red-400 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-slate-50">Upcoming event</h3>
+                    <h3 class="text-2xl mt-8 text-slate-50">0</h3>
+                </div>
+                <div class="w-[30%] cursor-pointer hover:transform-gpu hover:scale-105 transition-all duration-300 px-8 py-9 bg-purple-400 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-slate-50">Past Event</h3>
+                    <h3 class="text-2xl mt-8 text-slate-50">5</h3>
+                </div>
+                <div class="w-[30%] cursor-pointer hover:transform-gpu hover:scale-105 transition-all duration-300 px-8 py-9 bg-blue-400 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-slate-50">Member</h3>
+                    <h3 class="text-2xl mt-8 text-slate-50">5</h3>
+                </div>
+            </div>
+            <!-- cards -->
+        </section>
+
+        
+    </main>
+</body>
+<script src="../../asset/js/jquery.js"></script>
+<script>
+    let queryString = window.location;
+    if (queryString.pathname == "/page/admin/dashboard.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-home").addClass("border-b-blue-600 border-b-4")
+    }else if (queryString.pathname == "/page/admin/member.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-member").addClass("border-b-blue-600 border-b-4")
+    }else if (queryString.pathname == "/page/admin/events.html") {
+        $("#list-sidebar > *").removeClass("border-b-blue-600 border-b-4")
+        $(".btn-sidebar-event").addClass("border-b-blue-600 border-b-4")
+    }
+    // const urlParams = new URLSearchParams(queryString);
+
+    // const product = urlParams.get('product')
+</script>
+</html>
